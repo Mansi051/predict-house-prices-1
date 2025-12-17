@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 
 X=np.array([
     [800,1,20],
-    [1000,1,15]
+    [1000,1,15],
     [1200,2,10],
     [1500,2,7],
     [1800,3,5],
