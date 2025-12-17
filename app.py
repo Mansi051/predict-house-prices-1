@@ -41,10 +41,10 @@ st.subheader("Enter House Details")
 
 
 size=st.slider("House Size (sqft)", min_value=500, max_value=5000, value=1000, step=50)
-floors=st.selectbox("Number of floors", options=[1,2,3,4,5])
+floors=st.selectbox("Number of rooms", options=[1,2,3,4,5])
 age=st.slider("Age of House(years)",min_value=0, max_value=50,value=5)
 
-if st.button("Predict Prize"):
+if st.button("Predict Price"):
     input_data=np.array([[size,floors,age]])
     prediction=model.predict(input_data)
     st.success(f"""
