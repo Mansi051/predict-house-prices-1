@@ -31,7 +31,7 @@ st.info(
     from suburban Mumbai, India**.
 
     - Prices are in **Lakhs INR**
-    - Reflects typical Mumbai apartment pricing trends
+    - Reflects typical Mumbai house pricing trends
     - Intended for **educational demonstration only**
 """
 )
