@@ -45,6 +45,6 @@ if st.button("Predict Price"):
     else:
         price_text=f"₹ {predicted_price:.2f} Lakhs"
     st.success(f"""
-               **Estimated Price in Mumbai: {price_text}**""")
+               **Estimated Price in {city}: {price_text}**""")
     
     
