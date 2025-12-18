@@ -51,14 +51,4 @@ if st.button("Predict Price"):
     st.success(f"""
                **Estimated Price in Mumbai: {price_text}**""")
     
-    sizes=np.linspace(500,5000,20)
-    input_data=np.array([[s,rooms,age] for s in sizes])
-    input_scaled=scaler.transform(input_data)
-    prices=model.predict(input_scaled)
-
-    fig ,ax=plt.subplots()
-    ax.plot(sizes,prices,marker='o')
-    ax.set_xlabel("House size(sqft)")
-    ax.set_ylabel("Price")
-    ax.set_title(f"Price vs Size in {city}")
-    st.pyplot(fig)
+    
