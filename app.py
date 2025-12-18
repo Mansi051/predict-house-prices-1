@@ -42,11 +42,12 @@ if st.button("Predict Price"):
     input_data=np.array([[size,rooms,age]])
     input_scaled=scaler.transform(input_data)
     prediction=model.predict(input_scaled)[0]
+    predicted_price = round(prediction, 2)
 
-    if prediction>=100:
-        price_text=f"₹ {prediction/100:.2f} Crores"
+    if predicted_price>=100:
+        price_text=f"₹ {predicted_price/100:.2f} Crores"
     else:
-        price_text=f"₹ {prediction:.2f} Lakhs"
+        price_text=f"₹ {predicted_price:.2f} Lakhs"
     st.success(f"""
                **Estimated Price in Mumbai: {price_text}**""")
     
