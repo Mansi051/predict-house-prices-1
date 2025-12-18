@@ -5,32 +5,32 @@ This project demonstrates the implementation of **Multiple Linear Regression** i
 
 The model predicts house prices using the following features:
 
-# Size (sq ft)
+ - Size (sq ft)
 
-# Number of rooms
+ - Number of rooms
 
-# Age of the house (years)
+ - Age of the house (years)
 
 It supports multiple cities, making the model realistic and applicable to real-world housing datasets.
 
 ## Features
-# Predict housing prices using multiple input features.
+ - Predict housing prices using multiple input features.
 
-# Multiple Linear Regression implemented with scikit-learn.
+ - Multiple Linear Regression implemented with scikit-learn.
 
-# Separate scripts for:
+ - Separate scripts for:
 
-Assigning training sets manually.
+      -> Assigning training sets manually.
 
-Taking user input to predict house prices.
+      -> Taking user input to predict house prices.
 
 
 ## Requirements
-# Python 3.x
+  - Python 3.x
 
-# NumPy
+  - NumPy
 
-# scikit-learn
+  - scikit-learn
 
 
 
