@@ -16,7 +16,7 @@ def load_data(city):
 st.title("🏠 House Price Prediction App")
 
 st.info("""
-This model is trained on **synthetic but realistic residential house price data from multiple cities in India**.
+    This model estimates house prices for premium/posh residential areas in major Indian cities. Actual prices may vary based on locality, amenities, and market conditions."
 
 - Reflects typical housing trends across different urban areas
 - Intended for **educational demonstration only**
