@@ -1,42 +1,36 @@
 # Linear Regression in Python
 
 ## Overview
-This project demonstrates the implementation of **Linear Regression** in Python using two approaches:
+This project demonstrates the implementation of **Multiple Linear Regression** in Python to predict housing prices in different cities based on multiple features.
 
-1. **Unvectorized Implementation**: Using standard Python loops to calculate predictions, cost function, and gradients.  
-2. **Vectorized Implementation**: Using NumPy for efficient computation with vectorized operations.
+The model predicts house prices using the following features:
 
-The project also includes visualizations to understand the data and the cost function.
+# Size (sq ft)
+
+# Number of rooms
+
+# Age of the house (years)
+
+It supports multiple cities, making the model realistic and applicable to real-world housing datasets.
 
 ## Features
-- Single variable linear regression.
-- Implementation of **Cost Function (Mean Squared Error)**.
-- **Gradient Descent** for parameter optimization.
-- Visualizations:
-  - `x` vs `y` data plot.
-  - Cost function `J(w)` vs `w` plot for understanding convergence.
+# Predict housing prices using multiple input features.
+
+# Multiple Linear Regression implemented with scikit-learn.
+
+# Separate scripts for:
+
+Assigning training sets manually.
+
+Taking user input to predict house prices.
+
 
 ## Requirements
-- Python 3.x
-- NumPy
-- Matplotlib
+# Python 3.x
 
-## Usage:-
+# NumPy
 
-# Clone the repository:
-
-git clone <your-repo-link>
+# scikit-learn
 
 
-# Navigate to the desired folder:
 
-cd vectorized
-# or
-cd unvectorized
-
-
-# Run the Python script:
-
-python linear_regression_vectorized.py
-# or
-python linear_regression_unvectorized.py
