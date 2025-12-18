@@ -13,10 +13,6 @@ def load_data(city):
     scaler=joblib.load(f"models/{city}_scaler.pkl")
     return model,scaler
 
-
-
-
-
 st.title("🏠 House Price Prediction App")
 
 st.info("""
