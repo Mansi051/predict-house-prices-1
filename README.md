@@ -1,7 +1,9 @@
 # Linear Regression in Python
 
 ## Overview
-This project demonstrates the implementation of **Multiple Linear Regression** in Python to predict housing prices in different cities based on multiple features.
+This Multiple Linear Regression model estimates real estate prices for independent houses/bungalows 
+    using synthetically generated data inspired by real-world trends in mid to upper residential localities 
+    across major Indian cities
 
 The model predicts house prices using the following features:
 
