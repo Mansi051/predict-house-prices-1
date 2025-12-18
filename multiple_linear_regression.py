@@ -1,60 +1,37 @@
 import numpy as np
-import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+import joblib
+import os
+os.makedirs("models",exist_ok=True)
 
-def normalize(X):
-    mu=np.mean(X,axis=0)
-    sigma=np.std(X,axis=0)
-    return (X-mu)/sigma,mu,sigma
+x_base=np.array([
+    [800, 1, 20],
+    [1000, 1, 15],
+    [1200, 2, 10],
+    [1500, 2, 7],
+    [1800, 3, 5],
+    [2000, 3, 2]
+])
+city_prices={
+    "Mumbai":     [180, 220, 260, 310, 360, 420],
+    "Delhi":      [160, 200, 240, 290, 340, 400],
+    "Bangalore":  [120, 150, 190, 230, 270, 310],
+    "Chennai":    [110, 140, 175, 215, 255, 300],
+    "Hyderabad":  [100, 130, 165, 200, 240, 280],
+    "Pune":       [90, 120, 150, 185, 220, 250]
+}
 
-def predict(X,w,b):
-    return X@w+b
+for city,prices in city_prices.items():
+    y=np.array(prices)
+    scaler=StandardScaler()
+    x_scaled=scaler.fit_transform(x_base)
 
-def compute_cost(X,y,w,b):
-    m=X.shape[0]
-    errors=predict(X,w,b)-y
-    return np.sum(errors**2)/(2*m)
 
-def compute_gradient(X,y,w,b):
-    m=X.shape[0]
-    errors=predict(X,w,b)-y
-    dj_dw=(X.T@errors)/m
-    dj_db=np.sum(errors)/m
-    return dj_dw,dj_db
+    model=LinearRegression()
+    model.fit(x_scaled,y)
 
-def gradient_descent(X,y,w,b,alpha,iterations):
-    J=[]
-    for i in range(iterations):
-        dj_dw,dj_db=compute_gradient(X,y,w,b)
-        w-=alpha*dj_dw
-        b-=alpha*dj_db
-        J.append(compute_cost(X,y,w,b))
-        if i%100==0:
-            print(f"Iter {i:4d}: Cost {J[-1]:.4f}")
-    return w,b,J
-
-X_raw=np.array([[800,2],[1000,3],[1200,3],[1500,4],[1800,4]],dtype=float)
-y=np.array([180,220,260,310,360],dtype=float)
-
-X,mu,sigma=normalize(X_raw)
-w=np.zeros(X.shape[1])
-b=0.0
-alpha=0.01
-iterations=1000
-w,b,J=gradient_descent(X,y,w,b,alpha,iterations)
-
-print("\nFinal Parameters:")
-print("w:  ",w)
-print("b:",b)
-
-x_new=np.array([[1200,3]],dtype=float)
-x_new=(x_new-mu)/sigma
-price=predict(x_new,w,b)
-
-print(f"\nPredicted Price: {price[0]:.2f}")
-
-plt.figure()
-plt.plot(J)
-plt.xlabel("Iterations")
-plt.ylabel("Cost")
-plt.title("Cost vs Iterations")
-plt.show()
+    joblib.dump(model,f"models/{city}_model.pkl")
+    joblib.dump(scaler, f"models/{city}_scaler.pkl")
+    print(f" {city} model trained & saved")
+print("\n All city models trained succesfully")
