@@ -1,7 +1,7 @@
 # Linear Regression in Python
 
 ## Overview
-    This Multiple Linear Regression model estimates real estate prices for independent houses/bungalows 
+This Multiple Linear Regression model estimates real estate prices for independent houses/bungalows 
     using synthetically generated data inspired by real-world trends in mid to upper residential localities 
     across major Indian cities
 
