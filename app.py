@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import joblib
-import matplotlib.pyplot as plt
+
 st.set_page_config(
     page_title="House Price Prediction",
     page_icon="🏠",
