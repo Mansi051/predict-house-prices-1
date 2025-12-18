@@ -17,7 +17,7 @@ st.title("🏠 House Price Prediction App")
 
 st.info("""
     This model estimates house prices for **premium/posh residential areas** in major Indian cities. 
-    The dataset used is synthetically generated but inspired by real-world housing price trends in premium residential areas across major Indian cities. Actual prices may vary based on locality, amenities, and market conditions."
+    The dataset used is synthetically generated but inspired by real-world housing price trends in premium residential areas across major Indian cities. Actual prices may vary based on locality, amenities, and market conditions.
 - Reflects typical housing trends across different urban areas
 - Intended for **educational demonstration only**
 """)
