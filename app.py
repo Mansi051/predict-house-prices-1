@@ -12,7 +12,7 @@ def load_data(city):
     model=joblib.load(f"models/{city}_model.pkl")
     scaler=joblib.load(f"models/{city}_scaler.pkl")
     return model,scaler
-model,scaler=load_data()
+
 
 city=st.selectbox("Select City", options=["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune"])
 model, scaler=load_data(city)
