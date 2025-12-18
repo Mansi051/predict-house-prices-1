@@ -14,21 +14,21 @@ def load_data(city):
     return model,scaler
 
 
-city=st.selectbox("Select City", options=["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune"])
-model, scaler=load_data(city)
+
 
 
 st.title("🏠 House Price Prediction App")
 
-st.info(
-    """
-    This model is trained on **synthetic but realistic residential house price data
-    from suburban Mumbai, India**.
+st.info("""
+This model is trained on **synthetic but realistic residential house price data from multiple cities in India**.
 
-    - Reflects typical Mumbai house pricing trends
-    - Intended for **educational demonstration only**
-"""
-)
+- Reflects typical housing trends across different urban areas
+- Intended for **educational demonstration only**
+""")
+
+
+city=st.selectbox("Select City", options=["Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Pune"])
+model, scaler=load_data(city)
 
 st.divider()
 st.subheader("Enter House Details")
